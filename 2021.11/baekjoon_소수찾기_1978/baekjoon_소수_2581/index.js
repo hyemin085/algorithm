@@ -6,7 +6,7 @@ let input = fs.readFileSync(filePath).toString().trim().split("\n");
 const M = Number(input[0]);
 const N = Number(input[1]);
 
-const rangeNum = [1];
+const rangeNum = [];
 
 for (let i = M; i <= N; i++){
   rangeNum.push(i);
