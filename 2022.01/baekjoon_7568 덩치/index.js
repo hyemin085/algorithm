@@ -5,6 +5,8 @@ let input = fs.readFileSync(filepath).toString().split("\n");
 const n = input.shift()
 const totalArray = input.map(total => total.split(' ').map(num => +num));
 
+console.log(totalArray)
+
 const rank =[];
 
 for (let i = 0; i < n; i++) {
@@ -12,7 +14,6 @@ for (let i = 0; i < n; i++) {
 
   let count = 0;
   for (let j = 0; j < n; j++) {
-    console.log(totalArray[i], totalArray[j])
     if (i !== j) {
       if (
         totalArray[i][0] < totalArray[j][0] &&
