@@ -1,4 +1,4 @@
-const fs = require('fs');
+
 let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
 
 const N = input.shift();
