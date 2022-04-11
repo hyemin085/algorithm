@@ -1,12 +1,10 @@
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
-let input = fs
-  .readFileSync(filePath)
-  .toString()
-  .split(" ")
-  .map((num) => +num);
+let input = fs.readFileSync(filePath).toString().split(" ");
 
-const numbers =
-  input.map((num) => num * num).reduce((num, mov) => num + mov, 0) % 10;
+const money = BigInt(input.shift());
 
-console.log(numbers);
+const People = BigInt(input.shift());
+
+console.log((money / People).toString());
+console.log((money % People).toString());
