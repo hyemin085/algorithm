@@ -1,12 +1,12 @@
-const fs = require('fs')
-const filepath = process.platform === "linux"? "/dev/stdin" : "./input.txt";
+const fs = require("fs");
+const filepath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filepath).toString().split("\n");
 
 let str = String(input[0].split("")).toLowerCase();
 const result = new Array(26).fill(0);
 
-for (let i=0; i<=str.length; i++){
-  result[str.charCodeAt(i)-97] ++;
+for (let i = 0; i <= str.length; i++) {
+  result[str.charCodeAt(i) - 97]++;
 }
 
 const max = Math.max(...result);

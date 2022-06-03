@@ -1,5 +1,5 @@
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filePath).toString().trim().split("\n");
 
 input = input.map((n) => Number(n));
@@ -8,7 +8,7 @@ const T = input.shift();
 for (let i = 0; i < T; i++) {
   const a = input.shift();
   const b = input.shift();
-  const apt= [];
+  const apt = [];
 
   for (let i = 0; i <= a; i++) {
     apt.push([1]);

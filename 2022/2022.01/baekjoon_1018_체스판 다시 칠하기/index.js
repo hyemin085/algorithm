@@ -1,20 +1,35 @@
-const fs = require('fs')
-const filepath = process.platform === "linux"? "/dev/stdin" : "./input.txt";
+const fs = require("fs");
+const filepath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filepath).toString().split("\n");
 
-
-let total = input.shift().split(' ');
+let total = input.shift().split(" ");
 let N = Number(total.shift());
 let M = Number(total.shift());
 
-
-
-let white = ['WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW']
-let black = ['BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB', 'BWBWBWBW', 'WBWBWBWB']
+let white = [
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+];
+let black = [
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+  "BWBWBWBW",
+  "WBWBWBWB",
+];
 
 let board = [];
 for (let i = 0; i < N; i++) {
-  board[i] = input.shift().split('');
+  board[i] = input.shift().split("");
 }
 
 let answer = 90;
@@ -31,17 +46,14 @@ function check(x, y) {
 
   for (let i = y; i < y + 8; i++) {
     for (let j = x; j < x + 8; j++) {
-      if (board[i][j] !== white[i-y][j-x])
-        checkWhite++;
-      if (board[i][j] !== black[i-y][j-x])
-        checkBlack++;
+      if (board[i][j] !== white[i - y][j - x]) checkWhite++;
+      if (board[i][j] !== black[i - y][j - x]) checkBlack++;
     }
   }
 
   let min = checkBlack < checkWhite ? checkBlack : checkWhite;
 
-  if (min < answer)
-    answer = min;
+  if (min < answer) answer = min;
 }
 
 console.log(answer);

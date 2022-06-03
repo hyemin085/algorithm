@@ -2,9 +2,6 @@ const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split(" ");
 
-const money = BigInt(input.shift());
+const numbers = input.map((idx) => +idx);
 
-const People = BigInt(input.shift());
-
-console.log((money / People).toString());
-console.log((money % People).toString());
+console.log(numbers.sort()[1]);

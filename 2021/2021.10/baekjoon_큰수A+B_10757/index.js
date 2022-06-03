@@ -1,8 +1,8 @@
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filePath).toString().trim().split(" ");
 
 let A = BigInt(input[0]);
 let B = BigInt(input[1]);
 
-console.log((A+B).toString())
+console.log((A + B).toString());

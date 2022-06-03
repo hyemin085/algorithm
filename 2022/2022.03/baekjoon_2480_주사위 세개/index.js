@@ -1,18 +1,14 @@
 const fs = require("fs");
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
-
-const numbers = input[0].split(" ").map(idx => +idx);
-
+const numbers = input[0].split(" ").map((idx) => +idx);
 
 const a = numbers[0];
 const b = numbers[1];
 const c = numbers[2];
 
-
-result(a, b, c)
-
+result(a, b, c);
 
 function result(a, b, c) {
   let result = 0;
@@ -35,4 +31,3 @@ function result(a, b, c) {
   }
   console.log(result);
 }
-

@@ -1,7 +1,10 @@
-const fs = require('fs');
-const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
-const input = fs.readFileSync(filePath).toString().split('\n').map(n => +n);
-
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
+const input = fs
+  .readFileSync(filePath)
+  .toString()
+  .split("\n")
+  .map((n) => +n);
 
 //10000까지 소수 구하기
 const m = 10000;
@@ -18,7 +21,7 @@ for (let i = 2; i <= m; i++) {
 }
 
 //통과하는 모든요소를 새로운 배열로 반환.
-prime = prime.filter(n => n !== 0);
+prime = prime.filter((n) => n !== 0);
 
 // 테스트케이스 하나씩 반복
 for (let i = 0; i < input.length; i++) {
@@ -44,4 +47,3 @@ for (let i = 0; i < input.length; i++) {
     console.log(`${a[0]} ${a[1]}`);
   }
 }
-

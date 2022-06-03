@@ -1,17 +1,15 @@
-const fs = require('fs')
-const filepath = process.platform === "linux"? "/dev/stdin" : "./input.txt";
+const fs = require("fs");
+const filepath = process.platform === "linux" ? "/dev/stdin" : "./input01.txt";
 let input = fs.readFileSync(filepath).toString().split("\n");
 
-const n = input.shift()
-const totalArray = input.map(total => total.split(' ').map(num => +num));
+const n = input.shift();
+const totalArray = input.map((total) => total.split(" ").map((num) => +num));
 
-console.log(totalArray)
+console.log(totalArray);
 
-const rank =[];
+const rank = [];
 
 for (let i = 0; i < n; i++) {
-
-
   let count = 0;
   for (let j = 0; j < n; j++) {
     if (i !== j) {
@@ -26,4 +24,4 @@ for (let i = 0; i < n; i++) {
   rank.push(count + 1);
 }
 
-console.log(rank.join(' '));
+console.log(rank.join(" "));
